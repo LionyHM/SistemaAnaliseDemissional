@@ -1,5 +1,5 @@
-import Funcionario from "../Funcionario";
-import Setor from "../Setor";
+import Funcionario from "../FuncionarioModel";
+import Setor from "../SetorModel";
 
 export default interface ILider{
     Funcionario : Funcionario;

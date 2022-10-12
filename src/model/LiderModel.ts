@@ -1,6 +1,6 @@
 import ILider from "./interfaces/ILider";
-import Funcionario from "./Funcionario";
-import Setor from "./Setor";
+import Funcionario from "./FuncionarioModel";
+import Setor from "./SetorModel";
 
 export default class Lider implements ILider{
     Funcionario: Funcionario;

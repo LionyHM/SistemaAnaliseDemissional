@@ -1,6 +1,6 @@
 import IFuncionario from "./interfaces/IFuncionario";
-import Cargo from "./Cargo";
-import Setor from "./Setor";
+import Cargo from "./CargoModel";
+import Setor from "./SetorModel";
 
 class Funcionario implements IFuncionario{
     Nome: string;
@@ -20,11 +20,11 @@ class Funcionario implements IFuncionario{
     }
     
 
-    get getFuncionario():object {
+    getFuncionario(id: number):object {
         let arr = [this.Nome, this.Cargo, this.Salario]
         return arr;
     }
-    set setFuncionario(id: number) {
+    setFuncionario(id: number) {
         let id2 = id;
     }
 
