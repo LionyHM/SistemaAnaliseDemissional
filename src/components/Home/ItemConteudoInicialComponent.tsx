@@ -12,11 +12,11 @@ export default function ItemConteudoInicialComponent(props){
     }
     
     return(
-        <div className="flex justify-center flex-col w-20 h-20 mb-12 lg:mb-0"
+        <div className="flex justify-center flex-col w-20 h-20 mb-12 lg:mb-0 cursor-pointer"
         onMouseEnter={(e) => changerImg(e.target)}
         onMouseLeave={(e) => changeDefaultImg(e.target)}>
             <img title={props.tituloImg} src={img} alt="" />
-            <label title={props.tituloImg}>{props.tituloMenu}</label>
+            <label className="cursor-pointer" title={props.tituloImg}>{props.tituloMenu}</label>
         </div>
     )
     }
