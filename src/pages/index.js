@@ -1,9 +1,10 @@
-import LayoutComponent from '../components/LayoutComponent'
+import LayoutComponent from '../components/Layout/LayoutComponent'
+import HomeComponent from '../components/Home/HomeComponent'
 
 export default function Home() {
   return (
-      <LayoutComponent>
+      <HomeComponent>
 
-      </LayoutComponent>
+      </HomeComponent>
   )
 }
