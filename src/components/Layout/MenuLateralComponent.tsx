@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BtnSairComponent from "./BtnSairComponent";
 import ItemMenuLateralComponent from "./ItemMenuLateralComponent";
 import SubItemMenuLateralComponent from "./SubItemMenuLateralComponent";
 
@@ -24,7 +25,7 @@ export default function MenuLateralComponent(props){
     }
 
     return (
-        <div className={"flex justify-start items-start w-60 h-full rounded-tr-full border-r-2 "} style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1"}}>
+        <div className={"flex justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative"} style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1"}}>
             <nav className="flex items-center justify-between flex-wrap p-6 w-full mt-28">
                 <div className="block lg:hidden">
                     <button className="flex items-center px-3 py-2 border rounded text-teal-300 border-teal-400 hover:text-white hover:border-white">
@@ -47,6 +48,8 @@ export default function MenuLateralComponent(props){
                         <ItemMenuLateralComponent collapseLinkMenu={collapseLinkMenu} tituloItem="Gerenciar">
                             <SubItemMenuLateralComponent display={removeHiddenGerenciar} url="#" tituloItem="Gerenciar" ></SubItemMenuLateralComponent>
                         </ItemMenuLateralComponent>
+
+                        <BtnSairComponent></BtnSairComponent>
                     </div>
                    {/*  <div>
                     <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
