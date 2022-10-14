@@ -1,9 +1,7 @@
-import LayoutComponent from '../components/LayoutComponent'
+import HomeComponent from '../components/Home/HomeComponent'
 
 export default function Home() {
   return (
-      <LayoutComponent>
-
-      </LayoutComponent>
+      <HomeComponent />
   )
 }
