@@ -25,7 +25,8 @@ export default function MenuLateralComponent(props){
     }
 
     return (
-        <div className={"flex justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative"} style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1"}}>
+        <div className={"flex justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative z-20"} 
+            style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1", minHeight: "40em"}}>
             <nav className="flex items-center justify-between flex-wrap p-6 w-full mt-28">
                 <div className="block lg:hidden">
                     <button className="flex items-center px-3 py-2 border rounded text-teal-300 border-teal-400 hover:text-white hover:border-white">
