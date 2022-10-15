@@ -38,7 +38,7 @@ export default function MenuLateralComponent(props){
                             <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Profissional"></SubItemMenuLateralComponent>
                             <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Cargo"></SubItemMenuLateralComponent>
                             <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Setor"></SubItemMenuLateralComponent>
-                            <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Demissão"></SubItemMenuLateralComponent>
+                            <SubItemMenuLateralComponent display={removeHiddenCadastro} url="/demissao" tituloItem="Demissão"></SubItemMenuLateralComponent>
                         </ItemMenuLateralComponent>
 
                         <ItemMenuLateralComponent collapseLinkMenu={collapseLinkMenu} tituloItem="Relatórios">
