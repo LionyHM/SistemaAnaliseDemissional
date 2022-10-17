@@ -7,6 +7,8 @@ export default function HomeComponent(){
 
     return (
         <LayoutComponent>
+            <MenuLateralComponent>                
+            </MenuLateralComponent>
             <ConteudoInicialComponent />         
         </LayoutComponent>
     )

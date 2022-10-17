@@ -4,25 +4,24 @@ import ItemMenuLateralComponent from "./ItemMenuLateralComponent";
 import SubItemMenuLateralComponent from "./SubItemMenuLateralComponent";
 
 export default function MenuLateralComponent(props){
-    let [removeHiddenCadastro, setRemoveHiddenremoveHiddenCadastro] = useState("hidden")
-    let [removeHiddenRelatorio, setRemoveHiddenremoveHiddenRelatorio] = useState("hidden") 
-    let [removeHiddenGerenciar, setRemoveHiddenremoveHiddenGerenciar] = useState("hidden") 
+    let [removeHiddenCadastro, setRemoveHiddenCadastro] = useState(props.itemSelected == "demissao" ? "block" : "hidden")
+    let [removeHiddenRelatorio, setRemoveHiddenRelatorio] = useState("hidden") 
+    let [removeHiddenGerenciar, setRemoveHiddenGerenciar] = useState("hidden") 
 
     let [displayNavMenu, setDisplayNavMenu] = useState("hidden") 
 
-    function collapseLinkMenu(e){
-        
+    function collapseLinkMenu(e){       
         if(e.target.textContent === "Cadastrar"){
             let display = removeHiddenCadastro == "block" ? "hidden" : "block"
-            setRemoveHiddenremoveHiddenCadastro(display)
+            setRemoveHiddenCadastro(display)
         }
         else if(e.target.textContent === "Relatórios"){
             let display = removeHiddenRelatorio == "block" ? "hidden" : "block"
-            setRemoveHiddenremoveHiddenRelatorio(display)
+            setRemoveHiddenRelatorio(display)
         }
         else if(e.target.textContent === "Gerenciar"){
             let display = removeHiddenGerenciar == "block" ? "hidden" : "block"
-            setRemoveHiddenremoveHiddenGerenciar(display)
+            setRemoveHiddenGerenciar(display)
             }
     }
 
@@ -41,7 +40,7 @@ export default function MenuLateralComponent(props){
                                 <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Profissional"></SubItemMenuLateralComponent>
                                 <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Cargo"></SubItemMenuLateralComponent>
                                 <SubItemMenuLateralComponent display={removeHiddenCadastro} url="#" tituloItem="Setor"></SubItemMenuLateralComponent>
-                                <SubItemMenuLateralComponent display={removeHiddenCadastro} url="/demissao" tituloItem="Demissão"></SubItemMenuLateralComponent>
+                                <SubItemMenuLateralComponent itemSelected={props.itemSelected} display={removeHiddenCadastro} url="/demissao" tituloItem="Demissão"></SubItemMenuLateralComponent>
                             </ItemMenuLateralComponent>
 
                             <ItemMenuLateralComponent collapseLinkMenu={collapseLinkMenu} tituloItem="Relatórios">
