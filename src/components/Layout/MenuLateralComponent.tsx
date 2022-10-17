@@ -8,6 +8,8 @@ export default function MenuLateralComponent(props){
     let [removeHiddenRelatorio, setRemoveHiddenremoveHiddenRelatorio] = useState("hidden") 
     let [removeHiddenGerenciar, setRemoveHiddenremoveHiddenGerenciar] = useState("hidden") 
 
+    let [displayNavMenu, setDisplayNavMenu] = useState("hidden") 
+
     function collapseLinkMenu(e){
         
         if(e.target.textContent === "Cadastrar"){
@@ -24,14 +26,13 @@ export default function MenuLateralComponent(props){
             }
     }
 
+    function showNavMenu(){
+        displayNavMenu == "hidden" ? setDisplayNavMenu("block") : setDisplayNavMenu("hidden")
+    }
+
     return (
-        <>
-            <div className="block lg:hidden mt-20">
-                <button className="flex items-center px-3 py-2 border rounded ml-10" style={{color: "#566981", border: '1px solid #566981'}}>
-                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                </button>
-            </div>
-            <div className={"hidden lg:block justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative z-20"} 
+        <>            
+            <div className={`${displayNavMenu} lg:block justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative z-20`} 
                 style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1", minHeight: "40em"}}>
                 <nav className="flex items-center justify-between flex-wrap p-6 w-full mt-28">
                     <div className="w-full block flex-grow lg:flex lg:items-start lg:w-auto">
@@ -58,6 +59,11 @@ export default function MenuLateralComponent(props){
                         </div> */}
                     </div>
                 </nav>
+            </div>
+            <div onClick={() => showNavMenu()} className="block lg:hidden absolute top-2 z-30">
+                <button className="flex items-center px-3 py-2 border rounded ml-2 hover:bg-white" style={{color: "#89a7b1", border: '2px solid #89a7b1'}}>
+                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                </button>
             </div>
         </>
     )
