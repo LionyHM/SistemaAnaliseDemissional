@@ -4,59 +4,186 @@ export default function FormDemissaoComponent(){
 
     return(
         <ConteudoComponent>
-            <form className="w-full max-w-lg">
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
-                        First Name
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
-                    <p className="text-red-500 text-xs italic">Please fill out this field.</p>
-                    </div>
-                    <div className="w-full md:w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
-                        Last Name
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+            <form className="w-full">
+                <div className="flex w-full flex-wrap absolute top-40">
+                    <div className="w-full px-3 mb-6 md:mb-0">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                            Digite o nome do funcionário
+                        </label>
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
+                        <p className="text-red-500 text-xs italic">Please fill out this field.</p>
+                        <button className="btnSearchDefault text-white font-bold py-2 px-4 rounded">Buscar</button>
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-3 mb-6">
-                    <div className="w-full px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                        Password
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" />
-                    <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
-                    </div>
-                </div>
-                <div className="flex flex-wrap -mx-3 mb-2">
-                    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
-                        City
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque" />
-                    </div>
-                    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
-                        State
-                    </label>
-                    <div className="relative">
-                        <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                        <option>New Mexico</option>
-                        <option>Missouri</option>
-                        <option>Texas</option>
-                        </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                <div className="p-10">
+                    <section className="bg-white py-20 lg:py-[120px]">
+                        <div className="container">
+                            <div className="flex flex-wrap -mx-4">
+                                <div className="w-full px-4">
+                                    <div className="max-w-full overflow-x-auto">
+                                    <table className="table-auto w-full">
+                                        <thead>
+                                            <tr className="text-center" style={{backgroundColor: "#566981"}}>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white
+                                                border-l border-transparent
+                                                "
+                                                >
+                                                TLD
+                                                </th>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white
+                                                "
+                                                >
+                                                Duration
+                                                </th>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white
+                                                "
+                                                >
+                                                Registration
+                                                </th>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white
+                                                "
+                                                >
+                                                Renewal
+                                                </th>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white
+                                                "
+                                                >
+                                                Transfer
+                                                </th>
+                                                <th
+                                                className="
+                                                w-1/6
+                                                min-w-[160px]
+                                                text-sm
+                                                font-semibold
+                                                text-white                                               
+                                                border-r border-transparent
+                                                "
+                                                >
+                                                Register
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-[#F3F6FF]
+                                                border-b border-l border-[#E8E8E8]
+                                                "
+                                                >
+                                                .com
+                                                </td>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-white
+                                                border-b border-[#E8E8E8]
+                                                "
+                                                >
+                                                1 Year
+                                                </td>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-[#F3F6FF]
+                                                border-b border-[#E8E8E8]
+                                                "
+                                                >
+                                                $75.00
+                                                </td>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-white
+                                                border-b border-[#E8E8E8]
+                                                "
+                                                >
+                                                $5.00
+                                                </td>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-[#F3F6FF]
+                                                border-b border-[#E8E8E8]
+                                                "
+                                                >
+                                                $10.00
+                                                </td>
+                                                <td
+                                                className="
+                                                text-center text-dark
+                                                font-medium
+                                                text-sm
+                                                bg-white
+                                                border-b border-r border-[#E8E8E8]
+                                                "
+                                                >
+                                                <a
+                                                    href="javascript:void(0)"
+                                                    className="
+                                                    border border-primary
+                                                    py-2
+                                                    px-6
+                                                    text-primary
+                                                    inline-block
+                                                    rounded
+                                                    hover:bg-primary hover:text-white
+                                                    "
+                                                    >
+                                                Sign Up
+                                                </a>
+                                                </td>
+                                            </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
-                        Zip
-                    </label>
-                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" />
-                    </div>
+                    </section>
                 </div>
             </form>
 

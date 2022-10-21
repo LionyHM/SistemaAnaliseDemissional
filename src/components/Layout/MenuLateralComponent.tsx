@@ -3,6 +3,7 @@ import BtnSairComponent from "./BtnSairComponent";
 import ItemMenuLateralComponent from "./ItemMenuLateralComponent";
 import SubItemMenuLateralComponent from "./SubItemMenuLateralComponent";
 
+
 export default function MenuLateralComponent(props){
     let [removeHiddenCadastro, setRemoveHiddenCadastro] = useState(props.itemSelected == "demissao" ? "block" : "hidden")
     let [removeHiddenRelatorio, setRemoveHiddenRelatorio] = useState("hidden") 
@@ -31,7 +32,7 @@ export default function MenuLateralComponent(props){
 
     return (
         <>            
-            <div className={`${displayNavMenu} lg:block justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative z-20`} 
+            <div className={`${displayNavMenu} lg:block justify-start items-start w-60 h-full rounded-tr-full border-r-2 relative z-20 `} 
                 style={{backgroundColor: "#566981", borderRight: "8px solid #89a7b1", minHeight: "40em"}}>
                 <nav className="flex items-center justify-between flex-wrap p-6 w-full mt-28">
                     <div className="w-full block flex-grow lg:flex lg:items-start lg:w-auto">
