@@ -4,10 +4,12 @@ import Setor from '../../../model/SetorModel';
 
 export default async function GetFuncionario(req, res) {
 
-  const id = req.body.id
+  const nome:string = req.body.nome
 
-const funcionario = {}
 
+
+  const consult = await new Funcionario()
+  const funcionario = await consult.getFuncionario(nome.toLocaleUpperCase())
 
 
   res.status(200).json(funcionario)

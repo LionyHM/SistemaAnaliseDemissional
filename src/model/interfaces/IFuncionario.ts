@@ -3,6 +3,7 @@ import Setor from "../SetorModel";
 
 export default interface IFuncionario{
        Nome : string;
+       Cpf : string;
        Cargo : Cargo;
        Salario : number;
        InicioVigencia : Date;
@@ -10,5 +11,5 @@ export default interface IFuncionario{
        Ativo : boolean;
        
        getFuncionario(number):object
-       setFuncionario(number):any
+       setFuncionario(nome: string, cpf: string, cargo: Cargo, salario: number, inicioVigencia: Date, setor: Setor, ativo: boolean):any
 }
