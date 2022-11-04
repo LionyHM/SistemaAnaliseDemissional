@@ -21,7 +21,7 @@ class Funcionario implements IFuncionario{
         
         try {
 
-            const funcResponse = await funcionario.funcionario.filter(f => findString(nome, f.Nome.toLocaleUpperCase()))
+            const funcResponse = await funcionario.funcionario.filter(f => findString(nome, f.Nome.toLocaleUpperCase()) && f.Fim_Vigencia == null)
             let cargoResponse = {}
             let setorResponse = {}
             
@@ -44,12 +44,12 @@ class Funcionario implements IFuncionario{
             }            
 
         } catch (error) {
-            console.log(error)
-            
+            console.log(error)            
         }
         
        return {}        
     }
+    
     async setFuncionario(nome: string, cpf: string, cargo: Cargo, salario: number, inicioVigencia: Date, setor: Setor, ativo: boolean) {
         
     }

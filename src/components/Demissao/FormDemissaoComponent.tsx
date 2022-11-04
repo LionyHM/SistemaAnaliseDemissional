@@ -41,7 +41,7 @@ export default function FormDemissaoComponent(){
         const funcionario = await getFuncionario(nome)
         let arrFunc:any = []
 
-        funcionario.funcResponse.map((f, i) => {
+        funcionario.funcResponse?.map((f, i) => {
             arrFunc.push(
                 <tr key={i * Math.random()}>
                     <td className="text-center text-dark font-medium text-sm bg-[#F3F6FF] border-b border-l border-[#E8E8E8]">
