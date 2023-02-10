@@ -5,6 +5,7 @@ export default function FormDemissaoComponent(){
     const [titulosCabecalho, setTitulosCabecalho] = useState([
         "Nome","Cpf","Data de Nascimento", "Setor", "Cargo", "Chefia", "Efetuar Demissão"
     ])
+    const [erroMsg, setErroMsg] = useState("")
     const [exibirBusca,setExibirBusca] = useState("hidden")
     const [nome, setNome] = useState("")
     const [resultadoBusca, setResultadoBusca] = useState([])
@@ -39,6 +40,17 @@ export default function FormDemissaoComponent(){
 
     async function renderBusca(){
         const funcionario = await getFuncionario(nome)
+       
+        if(typeof funcionario === "string"){
+
+            setErroMsg(funcionario)
+            setResultadoBusca([])
+
+            return;
+        }
+
+        setErroMsg("")
+
         let arrFunc:any = []
 
         funcionario.funcResponse?.map((f, i) => {
@@ -68,7 +80,7 @@ export default function FormDemissaoComponent(){
                     </td>
                     <td
                     className="text-center text-dark font-medium text-sm bg-white border-b border-r border-[#E8E8E8]">
-                    <a href="#" className="border border-primary py-2 px-6 text-white inline-block rounded bg-red-400 hover:bg-red-800">
+                    <a href="#" className="border border-primary py-1 px-3 text-white inline-block rounded bg-red-400 hover:bg-red-800">
                         Confirmar
                     </a>
                     </td>
@@ -104,6 +116,7 @@ export default function FormDemissaoComponent(){
                             Digite o nome do funcionário
                         </label>
                         <input ref={inputElement} onChange={(e) => setNome(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-[#89a7b1] rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Digite o nome do funcionário" />
+                        <div className="block uppercase tracking-wide text-xs font-bold mb-2 ml-2 text-red-500">{erroMsg}</div>
                        <button onClick={() => renderBusca()} className="btnSearchDefault text-white font-bold py-2 px-4 rounded">Buscar</button>
                     </div>
                     <div className={`${exibirBusca} w-full pl-10`}>

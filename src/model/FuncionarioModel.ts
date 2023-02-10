@@ -5,6 +5,8 @@ import funcionario from "../data/funcionario"
 import cargo from "../data/cargo"
 import setor from "../data/setor"
 import findString from "../util/functions/findString";
+import findCpf from "../util/functions/findCpf";
+import validateCPF from "../util/functions/validacaoCpf";
 
 
 class Funcionario implements IFuncionario{
@@ -16,23 +18,41 @@ class Funcionario implements IFuncionario{
     Setor: Setor;
     Ativo: boolean;    
     
+    async getPorNome(nome){
+        let func = await funcionario.funcionario.filter(f => findString(nome, f.Nome.toLocaleUpperCase()) && f.Fim_Vigencia == null);
+        return func;
+    }
 
-    async getFuncionario(nome: string) {
+    async getPorCpf(cpf){
+        let valCpf = validateCPF(cpf);
+        if(!valCpf){
+            return false
+        };        
+
+        let func = await funcionario.funcionario.filter(f => findCpf(cpf, f.Cpf) && f.Fim_Vigencia == null);
+
+        return func;
+    }
+    async getFuncionario(nomeOuCpf: any) {
         
         try {
+            const funcResponse:any = isNaN(nomeOuCpf) ? await this.getPorNome(nomeOuCpf) : await this.getPorCpf(nomeOuCpf);
 
-            const funcResponse = await funcionario.funcionario.filter(f => findString(nome, f.Nome.toLocaleUpperCase()) && f.Fim_Vigencia == null)
-            let cargoResponse = {}
-            let setorResponse = {}
+            if(!isNaN(nomeOuCpf) && !funcResponse){
+                return "O Cpf informado não é válido";
+            };
+
+            let cargoResponse = {};
+            let setorResponse = {};
             
             if(funcResponse.length > 0){
                 try {
                     funcResponse.forEach(f => {
-                        cargoResponse = cargo.cargo.find(c => c.IdCargo == f.FK_IdCargo)
-                        setorResponse = setor.setor.find(s => s.IdSetor == f.FK_IdSetor)
+                        cargoResponse = cargo.cargo.find(c => c.IdCargo == f.FK_IdCargo);
+                        setorResponse = setor.setor.find(s => s.IdSetor == f.FK_IdSetor);
 
-                        f.cargoResponse = cargoResponse
-                        f.setorResponse = setorResponse
+                        f.cargoResponse = cargoResponse;
+                        f.setorResponse = setorResponse;
                     })                    
                     
 
