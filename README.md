@@ -15,8 +15,8 @@ Este é um sistema desenvolvido para analisar os motivos das demissões de funci
 
 ## Instalação
 1. Clone este repositório para sua máquina local
-2. Instale as dependências necessárias usando o gerenciador de pacotes npm: npm install
-3. Execute o comando a seguir para iniciar a aplicação: npm run dev
+2. Instale as dependências necessárias usando o gerenciador de pacotes npm: `npm install`
+3. Execute o comando a seguir para iniciar a aplicação: `npm run dev`
 4. Acesse a aplicação em seu navegador na seguinte URL: http://localhost:3000/
 
 ## Contribuição
