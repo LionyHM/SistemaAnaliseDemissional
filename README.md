@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Análise Demissional
 
-## Getting Started
+Este é um sistema desenvolvido para analisar os motivos das demissões de funcionários em uma empresa. Com ele, é possível identificar as tendências e padrões de demissão, ajudando a empresa a tomar medidas proativas para reduzir a rotatividade de funcionários.
 
-First, run the development server:
+## Recursos
+- Cadastro de funcionários demitidos com informações detalhadas sobre o motivo da demissão
+- Geração de relatórios com estatísticas sobre as demissões, incluindo a porcentagem de demissões por motivo, departamento, gênero, entre outros
+- Gráficos interativos para visualização das estatísticas
+- Filtro de pesquisa para análise aprofundada de dados
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Tecnologias utilizadas
+- Linguagem de programação: Typescript
+- Banco de dados: MySql
+- Framework web: Next JS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalação
+1. Clone este repositório para sua máquina local
+2. Instale as dependências necessárias usando o gerenciador de pacotes npm: `npm install`
+3. Execute o comando a seguir para iniciar a aplicação: `npm run dev`
+4. Acesse a aplicação em seu navegador na seguinte URL: http://localhost:3000/
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Contribuição
+Se você deseja contribuir para este projeto, siga as seguintes etapas:
+1. Faça um fork deste repositório
+2. Crie sua branch de contribuição (`git checkout -b feature/nome-da-feature`)
+3. Commit suas alterações (`git commit -am 'Adicionado nova feature'`)
+4. Envie sua branch para o repositório remoto (`git push origin feature/nome-da-feature`)
+5. Crie um Pull Request
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Licença
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
