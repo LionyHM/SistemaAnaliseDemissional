@@ -6,7 +6,7 @@ import cargo from "../data/cargo"
 import setor from "../data/setor"
 import findString from "../util/functions/findString";
 import findCpf from "../util/functions/findCpf";
-import validateCPF from "../util/functions/validacaoCpf";
+import validateCPF from "../util/functions/validateCpf";
 
 
 class Funcionario implements IFuncionario{
