@@ -1,7 +1,5 @@
 # Análise Demissional
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/57a32eeacbf0d8bde384/maintainability)](https://codeclimate.com/github/LionyHM/SistemaAnaliseDemissional/maintainability)
-
 Este é um sistema desenvolvido para analisar os motivos das demissões de funcionários em uma empresa. Com ele, é possível identificar as tendências e padrões de demissão, ajudando a empresa a tomar medidas proativas para reduzir a rotatividade de funcionários.
 
 ## Recursos
