@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ConteudoComponent from "../Layout/ConteudoComponent"
 import ItemConteudoInicialComponent from "./ItemConteudoInicialComponent"
+import React from 'react';
 
 export default function ConteudoInicialComponent(){
 

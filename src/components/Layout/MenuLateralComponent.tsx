@@ -2,6 +2,7 @@ import { useState } from "react";
 import BtnSairComponent from "./BtnSairComponent";
 import ItemMenuLateralComponent from "./ItemMenuLateralComponent";
 import SubItemMenuLateralComponent from "./SubItemMenuLateralComponent";
+import React from 'react';
 
 
 export default function MenuLateralComponent(props){

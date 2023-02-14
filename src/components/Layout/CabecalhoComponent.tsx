@@ -1,3 +1,4 @@
+import React from 'react';
 export default function CabecalhoComponent(){
 
     const titulo = "Sistema de Análise Demissional"

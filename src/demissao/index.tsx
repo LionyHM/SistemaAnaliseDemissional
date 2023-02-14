@@ -1,6 +1,7 @@
-import LayoutComponent from "../Layout/LayoutComponent";
-import MenuLateralComponent from "../Layout/MenuLateralComponent";
-import FormDemissaoComponent from "./FormDemissaoComponent";
+import LayoutComponent from "../components/Layout/LayoutComponent";
+import MenuLateralComponent from "../components/Layout/MenuLateralComponent";
+import FormDemissaoComponent from "./components/FormDemissaoComponent";
+import React from 'react';
 
 export default function DemissaoComponent(){
 
