@@ -18,7 +18,7 @@ export default function FormDemissaoComponent(){
 
     useEffect(() => {
         window.addEventListener("keydown", (e) => {
-            if(e.keyCode == 13){
+            if(e.key === "Enter"){
                 renderBusca()
             }
         }
