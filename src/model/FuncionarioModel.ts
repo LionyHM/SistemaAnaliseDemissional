@@ -6,7 +6,7 @@ import cargo from "../data/cargo"
 import setor from "../data/setor"
 import findString from "../util/functions/findString";
 import findCpf from "../util/functions/findCpf";
-import validateCPF from "../util/functions/validateCpf";
+import CPFValidator from "../util/functions/CPFValidator";
 
 
 class Funcionario implements IFuncionario{
@@ -24,7 +24,7 @@ class Funcionario implements IFuncionario{
     }
 
     async getPorCpf(cpf){
-        let valCpf = validateCPF(cpf);
+        let valCpf = CPFValidator.validateCPF(cpf);
         if(!valCpf){
             return false
         };        

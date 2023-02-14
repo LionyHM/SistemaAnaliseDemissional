@@ -1,45 +1,71 @@
-import validateCPF from '../../src/util/functions/validateCpf';
+import CPFValidator from '../../src/util/functions/CPFValidator';
 
-describe('validateCPF', () => {
-  it('deve retornar true para um CPF válido', () => {
-    const cpf = '12345678909';
-    const result = validateCPF(cpf);
-    expect(result).toBe(true);
+describe('CPFValidator', () => {
+  describe('stripCPF', () => {
+    test('should return only numbers from CPF string', () => {
+      const cpf = '123.456.789-01';
+      const strippedCPF = CPFValidator.stripCPF(cpf);
+      expect(strippedCPF).toBe('12345678901');
+    });
   });
 
-  it('deve retornar false para um CPF inválido', () => {
-    const cpf = '11122233344';
-    const result = validateCPF(cpf);
-    expect(result).toBe(false);
+  describe('isCPFValid', () => {
+    test('should return false for invalid CPF', () => {
+      const strippedCPF = '11111111111';
+      const result = CPFValidator.isCPFValid(strippedCPF);
+      expect(result).toBe(false);
+    });
+
+    test('should return true for valid CPF', () => {
+      const strippedCPF = '12345678901';
+      const result = CPFValidator.isCPFValid(strippedCPF);
+      expect(result).toBe(true);
+    });
   });
 
-  it('deve retornar false se o CPF tiver menos de 11 dígitos', () => {
-    const cpf = '1234567890';
-    const result = validateCPF(cpf);
-    expect(result).toBe(false);
+  describe('calculateCheckSum', () => {
+    test('should calculate correct check sum for the given CPF', () => {
+      const strippedCPF = '12345678901';
+      const start = 0;
+      const end = 9;
+      const checkSum = CPFValidator.calculateCheckSum(strippedCPF, start, end);
+      expect(checkSum).toBe(0);
+    });
   });
 
-  it('deve retornar false se o CPF tiver mais de 11 dígitos', () => {
-    const cpf = '1234567890123';
-    const result = validateCPF(cpf);
-    expect(result).toBe(false);
-  });
+  describe('isCheckSumValid', () => {
+    test('should return true if check sum is valid for the given CPF', () => {
+      const strippedCPF = '12345678901';
+      const checkSumIndex = 9;
+      const start = 0;
+      const end = 9;
+      const checkSum = 0;
+      const result = CPFValidator.isCheckSumValid(strippedCPF, checkSumIndex, start, end, checkSum);
+      expect(result).toBe(true);
+    });
 
-  it('deve retornar false se o CPF for composto por todos os dígitos iguais', () => {
-    const cpf = '11111111111';
-    const result = validateCPF(cpf);
-    expect(result).toBe(false);
-  });
-
-  it('deve retornar false se o cálculo do segundo dígito verificador não corresponder ao último dígito do CPF', () => {
-    const strippedCPF = '12345678901';
-    let sum = 0;
-    for (let i = 0; i < 10; i++) {
-      sum += parseInt(strippedCPF.charAt(i)) * (11 - i);
-    }
-    let rev = 11 - (sum % 11);
-    if (rev === 10 || rev === 11) rev = 0;
-    expect(validateCPF(strippedCPF)).toBe(false);
+    test('should return false if check sum is not valid for the given CPF', () => {
+      const strippedCPF = '12345678901';
+      const checkSumIndex = 9;
+      const start = 0;
+      const end = 9;
+      const checkSum = 1;
+      const result = CPFValidator.isCheckSumValid(strippedCPF, checkSumIndex, start, end, checkSum);
+      expect(result).toBe(false);
+    });
   });
 });
 
+describe('validateCPF', () => {
+  test('should return true for valid CPF', () => {
+    const cpf = '136.276.707-79';
+    const result = CPFValidator.validateCPF(cpf);
+    expect(result).toBe(true);
+  });
+
+ test('should return false for invalid CPF', () => {
+    const cpf = '111.111.111-11';
+    const result = CPFValidator.validateCPF(cpf);
+    expect(result).toBe(false);
+  });
+});
