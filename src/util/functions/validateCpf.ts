@@ -1,7 +1,7 @@
 export default function validateCPF(cpf: string): boolean {
   const strippedCPF = cpf.replace(/[^\d]+/g, '');
 
-  if (strippedCPF.length !== 11 || /^(0{11}|1{11}|2{11}|3{11}|4{11}|5{11}|6{11}|7{11}|8{11}|9{11})$/.test(strippedCPF)) {
+  if (strippedCPF.length !== 11 || /^(\d)\1{10}$/.test(strippedCPF)) {
     return false;
   }
 
