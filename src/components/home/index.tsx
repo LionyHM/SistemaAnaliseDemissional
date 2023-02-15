@@ -1,7 +1,7 @@
-import CabecalhoComponent from "../Layout/CabecalhoComponent"
-import LayoutComponent from "../Layout/LayoutComponent"
-import MenuLateralComponent from "../Layout/MenuLateralComponent"
-import ConteudoInicialComponent from "./ConteudoInicialComponente"
+import CabecalhoComponent from "../layout/CabecalhoComponent"
+import LayoutComponent from "../layout/LayoutComponent"
+import MenuLateralComponent from "../layout/MenuLateralComponent"
+import ConteudoInicialComponent from "./components/ConteudoInicialComponente"
 import React from 'react';
 
 export default function HomeComponent(){

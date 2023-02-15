@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useRef, useState } from "react";
-import ConteudoComponent from "../../components/Layout/ConteudoComponent";
+import ConteudoComponent from "../../layout/ConteudoComponent";
 import ResultadoBuscaFormComponente from "./ResultadoBuscaFormComponente";
 import ConteudoFormDemissaoComponente from "./ConteudoFormDemissaoComponente";
 import { getFuncionario } from '../services/getFuncionario';

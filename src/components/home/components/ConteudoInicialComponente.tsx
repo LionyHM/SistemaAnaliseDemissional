@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ConteudoComponent from "../Layout/ConteudoComponent"
+import ConteudoComponent from "../../layout/ConteudoComponent"
 import ItemConteudoInicialComponent from "./ItemConteudoInicialComponent"
 import React from 'react';
 
