@@ -38,6 +38,6 @@ jobs:
           projectBaseDir: ./
           extraProperties: |
             sonar.sources=src
-            sonar.exclusions=__tests__/
+            sonar.exclusions=src/**
             sonar.test=__tests__/
             sonar.typescript.lcov.reportPaths=coverage/lcov.info
