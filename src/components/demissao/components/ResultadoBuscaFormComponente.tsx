@@ -2,7 +2,7 @@ import React from 'react';
 export default function (funcionario, indice, arrFunc)  {
 
     arrFunc.push(
-        <tr key={indice * Math.random()}>
+        <tr key={indice}>
                         <td className="text-center text-dark font-medium text-sm bg-[#F3F6FF] border-b border-l border-[#E8E8E8]">{funcionario.Nome}</td>
                         <td className="text-center text-dark font-medium text-sm bg-white border-b border-[#E8E8E8]">
                             {funcionario.Cpf}

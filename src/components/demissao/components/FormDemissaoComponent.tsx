@@ -21,7 +21,7 @@ export default function FormDemissaoComponent(){
 
         for(let titulo = 0; titulo < titulosCabecalhoTable.length; titulo++){
             arr.push(
-                <th key={titulo * Math.random()} className="w-1/6 min-w-[160px] text-sm font-semibold text-white border-l border-transparent">
+                <th key={titulo} className="w-1/6 min-w-[160px] text-sm font-semibold text-white border-l border-transparent">
                     {titulosCabecalhoTable[titulo]}
                 </th>
             )
