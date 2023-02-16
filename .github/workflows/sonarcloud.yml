@@ -27,7 +27,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Jest Test
-        run: yarn test
+        run: npx jest --coverage
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1.7
@@ -38,6 +38,6 @@ jobs:
           projectBaseDir: ./
           extraProperties: |
             sonar.sources=.
-            sonar.exclusions=**/__tests__/**/*
-            sonar.test.inclusions=**/__tests__/**/*.test.ts,**/__tests__/**/*.test.js
+            sonar.exclusions=__tests__/**/*
+            sonar.test.inclusions=__tests__/**/*.test.ts,**/__tests__/**/*.test.js
             sonar.typescript.lcov.reportPaths=coverage/lcov.info
