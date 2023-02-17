@@ -1,8 +1,5 @@
-import { SERVER_PROPS_ID } from "next/dist/shared/lib/constants";
-import CabecalhoComponent from "./CabecalhoComponent";
-import ConteudoComponent from "./ConteudoComponent";
-import MenuLateralComponent from "./MenuLateralComponent";
 import React from 'react';
+import CabecalhoComponent from "./CabecalhoComponent";
 
 export default function LayoutComponent(props){
 

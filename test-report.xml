@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\SAD\SistemaAnaliseDemissional\__tests__\api\GetFuncionario.test.ts">
+    <testCase name="getFuncionario deve retornar funcionario mockado" duration="4"/>
+  </file>
+  <file path="C:\SAD\SistemaAnaliseDemissional\__tests__\util\findCPF.test.ts">
+    <testCase name="findCPF should return true if the userCPF matches the CPFList" duration="2"/>
+    <testCase name="findCPF should return false if the userCPF does not match the CPFList" duration="0"/>
+  </file>
+  <file path="C:\SAD\SistemaAnaliseDemissional\__tests__\util\validateCpf.test.ts">
+    <testCase name="CPFValidator stripCPF should return only numbers from CPF string" duration="2"/>
+    <testCase name="CPFValidator isCPFValid should return false for invalid CPF" duration="0"/>
+    <testCase name="CPFValidator isCPFValid should return true for valid CPF" duration="1"/>
+    <testCase name="CPFValidator calculateCheckSum should calculate correct check sum for the given CPF" duration="0"/>
+    <testCase name="CPFValidator isCheckSumValid should return true if check sum is valid for the given CPF" duration="1"/>
+    <testCase name="CPFValidator isCheckSumValid should return false if check sum is not valid for the given CPF" duration="0"/>
+    <testCase name="validateCPF should return true for valid CPF" duration="0"/>
+    <testCase name="validateCPF should return false for invalid CPF" duration="1"/>
+  </file>
+  <file path="C:\SAD\SistemaAnaliseDemissional\__tests__\util\findString.test.ts">
+    <testCase name="findString should return true if nameEntered is included in nameToCompare" duration="2"/>
+    <testCase name="findString should return false if nameEntered is not included in nameToCompare" duration="0"/>
+    <testCase name="findString should be case-insensitive" duration="1"/>
+  </file>
+</testExecutions>

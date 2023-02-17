@@ -11,19 +11,22 @@ export default function MenuLateralComponent(props){
 
     let [displayNavMenu, setDisplayNavMenu] = useState("hidden") 
 
-    function collapseLinkMenu(e){       
-        if(e.target.textContent === "Cadastrar"){
-            let display = removeHiddenCadastro == "block" ? "hidden" : "block"
-            setRemoveHiddenCadastro(display)
+    function collapseLinkMenu(e){     
+        let display = '';
+        switch(e.target.textContent){
+            case "Cadastrar":
+                display = removeHiddenCadastro == "block" ? "hidden" : "block"
+                setRemoveHiddenCadastro(display)
+            break;
+            case "Relatórios":
+                display = removeHiddenRelatorio == "block" ? "hidden" : "block"
+                setRemoveHiddenRelatorio(display)
+            break;
+            case "Gerenciar":
+                display = removeHiddenGerenciar == "block" ? "hidden" : "block"
+                setRemoveHiddenGerenciar(display)
+            break;
         }
-        else if(e.target.textContent === "Relatórios"){
-            let display = removeHiddenRelatorio == "block" ? "hidden" : "block"
-            setRemoveHiddenRelatorio(display)
-        }
-        else if(e.target.textContent === "Gerenciar"){
-            let display = removeHiddenGerenciar == "block" ? "hidden" : "block"
-            setRemoveHiddenGerenciar(display)
-            }
     }
 
     function showNavMenu(){
